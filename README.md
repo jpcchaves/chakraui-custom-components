@@ -165,6 +165,43 @@ const theme = extendTheme(globalStyles);
 | `variant`           | `string` (optional)                | The Chakra UI variant for the input.                  |
 | `...rest`           | `InputProps` (optional, inherited) | Additional input properties inherited from Chakra UI. |
 
+### `PasswordInput`
+
+### Example Usage
+
+```tsx
+import React from 'react';
+import { PasswordInput } from 'chakra-ui-custom-components';
+
+const MyForm: React.FC = () => {
+  return (
+    <PasswordInput
+      inputLabel="Username"
+      isRequired
+      handleChange={() => {}}
+      handleBlur={() => {}}
+      inputValue=""
+      inputIdentifier="username"
+    />
+  );
+};
+```
+
+| Prop                | Type                               | Description                                           |
+| ------------------- | ---------------------------------- | ----------------------------------------------------- |
+| `inputLabel`        | `string`                           | The label for the password input.                     |
+| `isRequired`        | `boolean`                          | Indicates if the password input is required.          |
+| `handleChange`      | `function`                         | The function to handle password input changes.        |
+| `handleBlur`        | `function`                         | The function to handle password input blur.           |
+| `inputValue`        | `string`                           | The value of the password input.                      |
+| `inputIdentifier`   | `string`                           | A unique identifier for the password input.           |
+| `isInvalid`         | `boolean`                          | Indicates if the password input is invalid.           |
+| `inputErrorMessage` | `string`                           | The error message to display for an invalid password. |
+| `hasFloatingLabel`  | `boolean` (optional)               | Adds a floating label effect.                         |
+| `placeholder`       | `string` (optional)                | The placeholder text for the password input.          |
+| `variant`           | `string` (optional)                | The Chakra UI variant for the password input.         |
+| `...rest`           | `InputProps` (optional, inherited) | Additional input properties inherited from Chakra UI. |
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
