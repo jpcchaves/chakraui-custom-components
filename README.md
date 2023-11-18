@@ -49,6 +49,107 @@ const MyForm: React.FC = () => {
 };
 ```
 
+### Utility Function: `floatingLabelVariant`
+
+The `floatingLabelVariant` function returns custom styles for a floating label variant within the Chakra UI `Form` component. It takes two parameters:
+
+- `floatingLabelBgLight` (string): Background color for the label when the overall background is light.
+- `floatingLabelBgDark` (string): Background color for the label when the overall background is dark.
+
+```tsx
+// Import this function to get custom styles for the floating label variant
+export const floatingLabelVariant = (
+  floatingLabelBgLight: string,
+  floatingLabelBgDark: string
+) => {
+  return {
+    components: {
+      Form: {
+        variants: {
+          floating: {
+            container: {
+              _focusWithin: {
+                label: {
+                  ...activeLabelStyles,
+                },
+              },
+              'input:not(:placeholder-shown) + label, .chakra-select__wrapper + label, textarea:not(:placeholder-shown) ~ label': {
+                ...activeLabelStyles,
+              },
+              label: {
+                top: 0,
+                left: 0,
+                zIndex: 2,
+                position: 'absolute',
+                backgroundColor: floatingLabelBgLight,
+                pointerEvents: 'none',
+                mx: 3,
+                px: 1,
+                my: 2,
+                transformOrigin: 'left top',
+                _dark: {
+                  backgroundColor: floatingLabelBgDark,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  };
+};
+```
+
+## Applying the Floating Label Variant
+
+Follow these instructions to seamlessly integrate the custom floating label variant into your Chakra UI theme configuration.
+
+### 1. Import Dependencies
+
+In your Chakra theme configuration file, start by importing the necessary dependencies:
+
+```tsx
+// In the user's Chakra theme configuration file
+import { extendTheme } from '@chakra-ui/react';
+import { floatingLabelVariant } from 'chakraui-custom-components';
+```
+
+### 2.Define Background Colors and pass them to floatingLabelVariant method
+
+Define the background colors for the floating label variant in both light and dark modes:
+
+```tsx
+const floatingLabelBgLight = '#FFFFFF'; // Set your desired light mode background color
+const floatingLabelBgDark = '#1B254B'; // Set your desired dark mode background color
+
+const floatingLabelStyle = floatingLabelVariant(
+  floatingLabelBgLight,
+  floatingLabelBgDark
+); // the function returns the custom variant with the custom background colors your selected
+```
+
+### 3. Use the floatingLabelStyle in your chakra global styles definition
+
+```tsx
+const globalStyles = {
+  components: {
+    ...floatingLabelStyles,
+  },
+};
+```
+
+### 4. Add the global styles in your chakra theme definition
+
+```tsx
+const theme = extendTheme(globalStyles);
+```
+
+### 5. Add theme in Chakra Provider
+
+```tsx
+<ChakraProvider theme={theme}>/* your app*/</ChakraProvider>
+```
+
 | Prop                | Type                               | Description                                           |
 | ------------------- | ---------------------------------- | ----------------------------------------------------- |
 | `inputLabel`        | `string`                           | The label for the input.                              |
@@ -67,3 +168,7 @@ const MyForm: React.FC = () => {
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+```
+
+```
