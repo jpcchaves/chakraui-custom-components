@@ -2,7 +2,7 @@ const activeLabelStyles = {
     transform: 'scale(0.85) translateY(-24px)',
   };
 
- export const floatingLabelVariant = (floatingLabelBgColor: string) =>  {
+ export const floatingLabelVariant = (floatingLabelBgLight: string, floatingLabelBgDark: string) =>  {
     return {
     Form: {
       variants: {
@@ -21,14 +21,14 @@ const activeLabelStyles = {
               left: 0,
               zIndex: 2,
               position: 'absolute',
-              backgroundColor: floatingLabelBgColor,
+              backgroundColor: floatingLabelBgLight,
               pointerEvents: 'none',
               mx: 3,
               px: 1,
               my: 2,
               transformOrigin: 'left top',
               _dark: {
-                backgroundColor: floatingLabelBgColor,
+                backgroundColor: floatingLabelBgDark,
               },
             },
           },
