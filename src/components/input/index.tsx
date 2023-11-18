@@ -1,6 +1,5 @@
 import { WarningIcon } from '@chakra-ui/icons';
 import {
-  ChakraProvider,
   FormControl,
   FormErrorMessage,
   FormLabel,
@@ -8,7 +7,6 @@ import {
   InputGroup,
   InputProps,
   InputRightElement,
-  extendTheme,
 } from '@chakra-ui/react';
 import React from 'react';
 import { makeLabel } from '../requiredAsterisk';
@@ -23,7 +21,6 @@ interface IProps extends InputProps {
   inputValue: string;
   inputErrorMessage?: string;
   inputIdentifier: string;
-  floatingLabelBgColor?: string;
 }
 
 export const InputComponent = ({
@@ -37,91 +34,46 @@ export const InputComponent = ({
   isRequired,
   hasFloatingLabel = false,
   placeholder,
-  floatingLabelBgColor = '#FFFFFF',
   ...rest
 }: IProps) => {
-  const activeLabelStyles = {
-    transform: 'scale(0.85) translateY(-24px)',
-  };
-
-  const globalStyles = {
-    components: {
-      Form: {
-        variants: {
-          floating: {
-            container: {
-              _focusWithin: {
-                label: {
-                  ...activeLabelStyles,
-                },
-              },
-              'input:not(:placeholder-shown) + label, .chakra-select__wrapper + label, textarea:not(:placeholder-shown) ~ label': {
-                ...activeLabelStyles,
-              },
-              label: {
-                top: 0,
-                left: 0,
-                zIndex: 2,
-                position: 'absolute',
-                backgroundColor: floatingLabelBgColor,
-                pointerEvents: 'none',
-                mx: 3,
-                px: 1,
-                my: 2,
-                transformOrigin: 'left top',
-                _dark: {
-                  backgroundColor: floatingLabelBgColor,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  };
-
-  const customTheme = extendTheme(globalStyles);
-
   return (
-    <ChakraProvider theme={extendTheme(customTheme)}>
-      <FormControl
-        isInvalid={isInvalid}
-        variant={hasFloatingLabel ? 'floating' : ''}
-      >
-        {!hasFloatingLabel ? (
+    <FormControl
+      isInvalid={isInvalid}
+      variant={hasFloatingLabel ? 'floating' : ''}
+    >
+      {!hasFloatingLabel ? (
+        <FormLabel htmlFor={inputIdentifier}>
+          {makeLabel(isRequired, inputLabel)}
+        </FormLabel>
+      ) : null}
+      <InputGroup>
+        <Input
+          onChange={handleChange}
+          onBlur={handleBlur}
+          name={inputIdentifier}
+          id={inputIdentifier}
+          value={inputValue}
+          placeholder={hasFloatingLabel ? ' ' : placeholder}
+          type="text"
+          {...rest}
+        />
+
+        {hasFloatingLabel ? (
           <FormLabel htmlFor={inputIdentifier}>
             {makeLabel(isRequired, inputLabel)}
           </FormLabel>
         ) : null}
-        <InputGroup>
-          <Input
-            onChange={handleChange}
-            onBlur={handleBlur}
-            name={inputIdentifier}
-            id={inputIdentifier}
-            value={inputValue}
-            placeholder={hasFloatingLabel ? ' ' : placeholder}
-            type="text"
-            {...rest}
-          />
-
-          {hasFloatingLabel ? (
-            <FormLabel htmlFor={inputIdentifier}>
-              {makeLabel(isRequired, inputLabel)}
-            </FormLabel>
-          ) : null}
-
-          {isInvalid && isRequired && (
-            <InputRightElement>
-              <WarningIcon color="red.600" />
-            </InputRightElement>
-          )}
-        </InputGroup>
 
         {isInvalid && isRequired && (
-          <FormErrorMessage>{inputErrorMessage}</FormErrorMessage>
+          <InputRightElement>
+            <WarningIcon color="red.600" />
+          </InputRightElement>
         )}
-      </FormControl>
-    </ChakraProvider>
+      </InputGroup>
+
+      {isInvalid && isRequired && (
+        <FormErrorMessage>{inputErrorMessage}</FormErrorMessage>
+      )}
+    </FormControl>
   );
 };
