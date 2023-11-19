@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
-import { ChakraProvider } from '@chakra-ui/react';
+import ThemeInjection from './style/ThemeInjection.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ChakraProvider>
+    <ThemeInjection>
       <App />
-    </ChakraProvider>
+    </ThemeInjection>
   </React.StrictMode>
 );
