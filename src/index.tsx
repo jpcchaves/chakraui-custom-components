@@ -1,6 +1,7 @@
-import {InputComponent,PasswordInput} from './components/inputs'
+import {
+  InputComponent,
+  PasswordInput,
+  floatingLabelVariant,
+} from './components/inputs';
 
-export {
-    InputComponent,
-    PasswordInput
-}
+export { InputComponent, PasswordInput, floatingLabelVariant };
