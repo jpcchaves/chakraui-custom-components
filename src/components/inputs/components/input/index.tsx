@@ -10,8 +10,7 @@ import {
 } from '@chakra-ui/react';
 import React, { FocusEvent, FormEvent } from 'react';
 import { makeLabel } from '../requiredAsterisk';
-
-type OmittedInputProps = 'onChange' | 'onBlur';
+import { OmittedInputProps } from '../../types/OmittedInputProps';
 
 interface IProps extends Omit<InputProps, OmittedInputProps> {
   inputLabel: string;

@@ -1,5 +1,6 @@
-import { InputComponent } from './components/input';
-import { floatingLabelVariant } from './components/input/style';
-import { PasswordInput } from './components/passwordInput';
+import {InputComponent,PasswordInput} from './components/inputs'
 
-export { InputComponent, PasswordInput, floatingLabelVariant };
+export {
+    InputComponent,
+    PasswordInput
+}

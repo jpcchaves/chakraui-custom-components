@@ -11,17 +11,18 @@ import {
   InputRightElement,
   useDisclosure,
 } from '@chakra-ui/react';
-import React, { useCallback } from 'react';
+import React, { FocusEvent, FormEvent, useCallback } from 'react';
 import { makeLabel } from '../requiredAsterisk';
+import { OmittedInputProps } from '../../types/OmittedInputProps';
 
-interface IProps extends InputProps {
+interface IProps extends Omit<InputProps, OmittedInputProps> {
   hasFloatingLabel?: boolean;
   inputLabel?: string;
   inputName?: string;
   isInvalid?: boolean;
   isRequired: boolean;
-  handleChange: () => void;
-  handleBlur: () => void;
+  onChange: (e?: FormEvent<HTMLInputElement>) => void;
+  onBlur: (e?: FocusEvent<HTMLInputElement>) => void;
   inputValue: string;
   inputErrorMessage?: string;
   inputIdentifier: string;
@@ -31,8 +32,8 @@ export const PasswordInput = ({
   inputLabel = 'Senha',
   isInvalid,
   isRequired,
-  handleChange,
-  handleBlur,
+  onChange,
+  onBlur,
   inputValue,
   hasFloatingLabel = false,
   inputErrorMessage,
@@ -69,8 +70,8 @@ export const PasswordInput = ({
           />
         </InputRightElement>
         <Input
-          onChange={handleChange}
-          onBlur={handleBlur}
+          onChange={onChange}
+          onBlur={onBlur}
           name={inputIdentifier}
           id={inputIdentifier}
           value={inputValue}
