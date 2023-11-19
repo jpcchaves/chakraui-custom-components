@@ -133,7 +133,7 @@ const floatingLabelStyle = floatingLabelVariant(
 ```tsx
 const globalStyles = {
   components: {
-    ...floatingLabelStyles,
+    ...floatingLabelStyle,
   },
 };
 ```
@@ -141,7 +141,12 @@ const globalStyles = {
 ### 4. Add the global styles in your chakra theme definition
 
 ```tsx
-const theme = extendTheme(globalStyles);
+const theme = extendTheme(
+  {
+    /* you theme extensions here */
+  },
+  globalStyles
+);
 ```
 
 ### 5. Add theme in Chakra Provider
