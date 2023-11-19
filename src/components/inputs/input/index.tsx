@@ -8,15 +8,17 @@ import {
   InputProps,
   InputRightElement,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { FocusEvent, FormEvent } from 'react';
 import { makeLabel } from '../requiredAsterisk';
 
-interface IProps extends InputProps {
+type OmittedInputProps = 'onChange' | 'onBlur';
+
+interface IProps extends Omit<InputProps, OmittedInputProps> {
   inputLabel: string;
   isInvalid?: boolean;
   isRequired: boolean;
-  handleChange: () => void;
-  handleBlur: () => void;
+  onChange: (e?: FormEvent<HTMLInputElement>) => void;
+  onBlur: (e?: FocusEvent<HTMLInputElement>) => void;
   hasFloatingLabel?: boolean;
   inputValue: string;
   inputErrorMessage?: string;
@@ -28,8 +30,8 @@ export const InputComponent = ({
   inputLabel,
   isInvalid = false,
   inputErrorMessage,
-  handleChange,
-  handleBlur,
+  onChange,
+  onBlur,
   inputValue,
   inputIdentifier,
   isRequired,
@@ -50,8 +52,8 @@ export const InputComponent = ({
       ) : null}
       <InputGroup>
         <Input
-          onChange={handleChange}
-          onBlur={handleBlur}
+          onChange={onChange}
+          onBlur={onBlur}
           name={inputIdentifier}
           id={inputIdentifier}
           value={inputValue}
