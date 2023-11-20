@@ -4,4 +4,13 @@ import {
   floatingLabelVariant,
 } from './components/inputs';
 
-export { InputComponent, PasswordInput, floatingLabelVariant };
+import { FloatButton } from './components/floatButton';
+import { ScrollToTop } from './components/scrollTop';
+
+export {
+  InputComponent,
+  PasswordInput,
+  floatingLabelVariant,
+  FloatButton,
+  ScrollToTop,
+};
