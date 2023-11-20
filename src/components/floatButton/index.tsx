@@ -7,7 +7,7 @@ interface IProps extends Omit<IconButtonProps, OmittedIconButtonProps> {
   onClick: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
-export const FloatButton = ({ onClick, icon, ...rest }: IProps) => {
+export const FloatButton = ({ onClick, ...rest }: IProps) => {
   return (
     <IconButton
       {...rest}
