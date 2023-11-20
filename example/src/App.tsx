@@ -1,7 +1,9 @@
+import { AddIcon } from '@chakra-ui/icons';
 import { Flex, Heading, SimpleGrid } from '@chakra-ui/react';
 import { InputComponent, PasswordInput } from 'chakraui-custom-components';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { FloatButton } from '../../src/components/floatButton/index';
 
 const App = () => {
   const { values, errors, touched, handleBlur, handleChange } = useFormik({
@@ -50,6 +52,13 @@ const App = () => {
           inputValue={values.test2}
         />
       </Flex>
+      <FloatButton
+        icon={<AddIcon boxSize={'12px'} />}
+        rounded={'full'}
+        size={'md'}
+        colorScheme="blue"
+        onClick={e => console.log(e)}
+      />
     </SimpleGrid>
   );
 };
