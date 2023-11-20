@@ -1,9 +1,13 @@
 import { AddIcon } from '@chakra-ui/icons';
-import { Flex, Heading, SimpleGrid } from '@chakra-ui/react';
-import { InputComponent, PasswordInput } from 'chakraui-custom-components';
+import { Box, Flex, Heading, SimpleGrid } from '@chakra-ui/react';
+import {
+  FloatButton,
+  InputComponent,
+  PasswordInput,
+  ScrollTop,
+} from 'chakraui-custom-components';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { FloatButton } from '../../src/components/floatButton/index';
 
 const App = () => {
   const { values, errors, touched, handleBlur, handleChange } = useFormik({
@@ -22,44 +26,54 @@ const App = () => {
   });
 
   return (
-    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} p="12">
-      <Flex flexDir={'column'} gap={4}>
-        <Heading fontSize={'larger'}>Simple Input</Heading>
-        <InputComponent
-          hasFloatingLabel
-          inputErrorMessage={errors.test1}
-          inputIdentifier="test1"
-          inputLabel="Teste 1"
-          isInvalid={!!(errors.test1 && touched.test1)}
-          isRequired
-          onBlur={handleBlur}
-          onChange={handleChange}
-          inputValue={values.test1}
-        />
-      </Flex>
-      <Flex flexDir={'column'} gap={4}>
-        <Heading fontSize={'larger'}>Password Input</Heading>
+    <Box>
+      <SimpleGrid
+        columns={{ base: 1, md: 2 }}
+        spacing={10}
+        p="12"
+        pb={'6000px'}
+      >
+        <Flex flexDir={'column'} gap={4}>
+          <Heading fontSize={'larger'}>Simple Input</Heading>
+          <InputComponent
+            hasFloatingLabel
+            inputErrorMessage={errors.test1}
+            inputIdentifier="test1"
+            inputLabel="Teste 1"
+            isInvalid={!!(errors.test1 && touched.test1)}
+            isRequired
+            onBlur={handleBlur}
+            onChange={handleChange}
+            inputValue={values.test1}
+          />
+        </Flex>
+        <Flex flexDir={'column'} gap={4}>
+          <Heading fontSize={'larger'}>Password Input</Heading>
 
-        <PasswordInput
-          hasFloatingLabel
-          inputErrorMessage={errors.test2}
-          inputIdentifier="test2"
-          inputLabel="Teste 2"
-          isInvalid={!!(errors.test2 && touched.test2)}
-          isRequired
-          onBlur={handleBlur}
-          onChange={handleChange}
-          inputValue={values.test2}
+          <PasswordInput
+            hasFloatingLabel
+            inputErrorMessage={errors.test2}
+            inputIdentifier="test2"
+            inputLabel="Teste 2"
+            isInvalid={!!(errors.test2 && touched.test2)}
+            isRequired
+            onBlur={handleBlur}
+            onChange={handleChange}
+            inputValue={values.test2}
+          />
+        </Flex>
+
+        <ScrollTop colorScheme="blue" />
+
+        <FloatButton
+          icon={<AddIcon boxSize={'12px'} />}
+          rounded={'full'}
+          size={'md'}
+          colorScheme="blue"
+          onClick={e => console.log(e)}
         />
-      </Flex>
-      <FloatButton
-        icon={<AddIcon boxSize={'12px'} />}
-        rounded={'full'}
-        size={'md'}
-        colorScheme="blue"
-        onClick={e => console.log(e)}
-      />
-    </SimpleGrid>
+      </SimpleGrid>
+    </Box>
   );
 };
 
