@@ -52,10 +52,9 @@ export const ScrollTop = ({ ...rest }: IProps) => {
           onClick={scrollToTop}
           position={'fixed'}
           right="12"
-          bottom="105px"
+          bottom="24"
           rounded={'full'}
-          size={'lg'}
-          colorScheme="navy"
+          size={'md'}
           cursor={'pointer'}
         />
       )}
