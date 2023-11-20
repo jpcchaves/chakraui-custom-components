@@ -7,7 +7,7 @@ interface IProps extends Omit<IconButtonProps, OmittedIconButtonProps> {
   onClick: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const FloatButton = ({ onClick, icon, ...rest }: IProps) => {
+export const FloatButton = ({ onClick, icon, ...rest }: IProps) => {
   return (
     <IconButton
       {...rest}
@@ -19,5 +19,3 @@ const FloatButton = ({ onClick, icon, ...rest }: IProps) => {
     />
   );
 };
-
-export default FloatButton;
