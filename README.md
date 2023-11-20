@@ -155,20 +155,20 @@ const theme = extendTheme(
 <ChakraProvider theme={theme}>/* your app*/</ChakraProvider>
 ```
 
-| Prop                | Type                               | Description                                           |
-| ------------------- | ---------------------------------- | ----------------------------------------------------- |
-| `inputLabel`        | `string`                           | The label for the input.                              |
-| `isRequired`        | `boolean`                          | Indicates if the input is required.                   |
-| `handleChange`      | `function`                         | The function to handle input changes.                 |
-| `handleBlur`        | `function`                         | The function to handle input blur.                    |
-| `inputValue`        | `string`                           | The value of the input.                               |
-| `inputIdentifier`   | `string`                           | A unique identifier for the input.                    |
-| `isInvalid`         | `boolean`                          | Indicates if the input is invalid.                    |
-| `inputErrorMessage` | `string`                           | The error message to display for an invalid input.    |
-| `hasFloatingLabel`  | `boolean` (optional)               | Adds a floating label effect.                         |
-| `placeholder`       | `string` (optional)                | The placeholder text.                                 |
-| `variant`           | `string` (optional)                | The Chakra UI variant for the input.                  |
-| `...rest`           | `InputProps` (optional, inherited) | Additional input properties inherited from Chakra UI. |
+| Prop                   | Type                                         | Description                                                                  |
+| ---------------------- | -------------------------------------------- | ---------------------------------------------------------------------------- |
+| `inputLabel`           | `string`                                     | The label for the input field.                                               |
+| `isInvalid`            | `boolean`                                    | Indicates whether the input is in an invalid state.                          |
+| `inputErrorMessage`    | `string`                                     | Error message to be displayed when `isInvalid` is `true`.                    |
+| `onChange`             | `(e?: FormEvent<HTMLInputElement>) => void`  | Event handler for the input change event.                                    |
+| `onBlur`               | `(e?: FocusEvent<HTMLInputElement>) => void` | Event handler for the input blur event.                                      |
+| `inputValue`           | `string`                                     | The current value of the input.                                              |
+| `inputIdentifier`      | `string`                                     | A unique identifier for the input.                                           |
+| `isRequired`           | `boolean`                                    | Indicates whether the input is required.                                     |
+| `hasFloatingLabel`     | `boolean`                                    | Indicates whether the input has a floating label.                            |
+| `placeholder`          | `string`                                     | Placeholder text for the input.                                              |
+| `floatingLabelBgColor` | `string`                                     | Background color for the floating label. Default is `'#FFFFFF'`.             |
+| `...rest`              | `OmittedInputProps`                          | Additional input props that are omitted from the standard `Input` component. |
 
 ### `PasswordInput`
 
