@@ -5,12 +5,12 @@ import {
 } from './components/inputs';
 
 import { FloatButton } from './components/floatButton';
-import { ScrollToTop } from './components/scrollTop';
+import { ScrollTop } from './components/scrollTop';
 
 export {
   InputComponent,
   PasswordInput,
   floatingLabelVariant,
   FloatButton,
-  ScrollToTop,
+  ScrollTop,
 };
