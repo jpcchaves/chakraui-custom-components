@@ -1748,10 +1748,10 @@ caniuse-lite@^1.0.30001541:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001563.tgz#aa68a64188903e98f36eb9c56e48fba0c1fe2a32"
   integrity sha512-na2WUmOxnwIZtwnFI2CZ/3er0wdNzU7hN+cPYz/z2ajHThnkWjNBOpEPP4n+4r2WPM847JaMotaJE3bnfzjyKw==
 
-chakraui-custom-components@^0.1.15:
-  version "0.1.15"
-  resolved "https://registry.yarnpkg.com/chakraui-custom-components/-/chakraui-custom-components-0.1.15.tgz#f79e9b1066ac0a8f330cc641622ffc90fdfb4a29"
-  integrity sha512-X0zPDz7BNlqieXYA3UONMdA6fN1xkId4Bpq5IweWeX+SGpfOrgAFFKTTmmq4qwKQBA5CcAweoBUEArPYHqD8iA==
+chakraui-custom-components@^0.1.16:
+  version "0.1.16"
+  resolved "https://registry.yarnpkg.com/chakraui-custom-components/-/chakraui-custom-components-0.1.16.tgz#9d179569a150303a55bd2ff353a112958c89a561"
+  integrity sha512-U7Ipmr+EVpmtBSsR8ytiy5Vqft1FurpHQh0UTfkVkq9OgAKoWK4Rh/m/8zEu7iQ/8D3zMK5ntH2U8AEKx8xhpw==
   dependencies:
     "@chakra-ui/icons" "^2.1.1"
     "@chakra-ui/react" "^2.8.2"
