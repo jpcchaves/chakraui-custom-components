@@ -1,11 +1,13 @@
-import { IconButton, IconButtonProps, keyframes } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
 import { ArrowUpIcon } from '@chakra-ui/icons';
+import { IconButton, IconButtonProps, keyframes } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
 
-interface IProps extends IconButtonProps {}
+type ScrollTopOmittedProps = 'aria-label';
 
-export const ScrollToTop = ({ ...rest }: IProps) => {
+interface IProps extends Omit<IconButtonProps, ScrollTopOmittedProps> {}
+
+export const ScrollTop = ({ ...rest }: IProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {
@@ -43,6 +45,7 @@ export const ScrollToTop = ({ ...rest }: IProps) => {
       {isVisible && (
         <IconButton
           {...rest}
+          aria-label="scroll top button"
           as={motion.div}
           animation={animation}
           icon={<ArrowUpIcon />}
