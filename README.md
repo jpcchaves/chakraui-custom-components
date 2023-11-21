@@ -27,7 +27,7 @@ import {
 
 ## Components
 
-### `InputComponent`
+## `InputComponent`
 
 ### Example Usage
 
@@ -100,7 +100,7 @@ export const floatingLabelVariant = (
 };
 ```
 
-## Applying the Floating Label Variant
+### Applying the Floating Label Variant
 
 Follow these instructions to seamlessly integrate the custom floating label variant into your Chakra UI theme configuration.
 
@@ -170,7 +170,7 @@ const theme = extendTheme(
 | `floatingLabelBgColor` | `string`                                     | Background color for the floating label. Default is `'#FFFFFF'`.             |
 | `...rest`              | `OmittedInputProps`                          | Additional input props that are omitted from the standard `Input` component. |
 
-### `PasswordInput`
+## `PasswordInput`
 
 ### Example Usage
 
@@ -207,7 +207,7 @@ const MyForm: React.FC = () => {
 | `variant`           | `string` (optional)                | The Chakra UI variant for the password input.         |
 | `...rest`           | `InputProps` (optional, inherited) | Additional input properties inherited from Chakra UI. |
 
-# `ScrollTop`
+## `ScrollTop`
 
 The `ScrollTop` component is a React component designed to provide a convenient "scroll to top" button for a web page. When the user scrolls down the page, the button becomes visible, and clicking it smoothly scrolls the page back to the top.
 
@@ -292,6 +292,18 @@ Feel free to customize the `ScrollTop` component by passing additional props to 
 />
 ```
 
+## `FloatButton`
+
+A customizable floating button component based on Chakra UI's IconButton.
+
+### Example
+
+```jsx
+// Basic usage:
+<FloatButton onClick={(event) => handleButtonClick(event)} icon={<Icon />} />
+
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```
