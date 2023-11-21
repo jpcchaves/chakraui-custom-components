@@ -49,6 +49,23 @@ const MyForm: React.FC = () => {
 };
 ```
 
+## Props
+
+| Prop                   | Type                                         | Description                                                                                                                                 |
+| ---------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `inputLabel`           | `string`                                     | The label for the input field.                                                                                                              |
+| `isInvalid`            | `boolean`                                    | Indicates whether the input is in an invalid state.                                                                                         |
+| `inputErrorMessage`    | `string`                                     | Error message to be displayed when `isInvalid` is `true`.                                                                                   |
+| `onChange`             | `(e?: FormEvent<HTMLInputElement>) => void`  | Event handler for the input change event.                                                                                                   |
+| `onBlur`               | `(e?: FocusEvent<HTMLInputElement>) => void` | Event handler for the input blur event.                                                                                                     |
+| `inputValue`           | `string`                                     | The current value of the input.                                                                                                             |
+| `inputIdentifier`      | `string`                                     | A unique identifier for the input.                                                                                                          |
+| `isRequired`           | `boolean`                                    | Indicates whether the input is required.                                                                                                    |
+| `hasFloatingLabel`     | `boolean`                                    | Indicates whether the input has a floating label.                                                                                           |
+| `placeholder`          | `string`                                     | Placeholder text for the input.                                                                                                             |
+| `floatingLabelBgColor` | `string`                                     | Background color for the floating label. Default is `'#FFFFFF'`.                                                                            |
+| ...rest                | Various props from Chakra UI's `InputProps`  | Refer to [Chakra UI Input documentation](https://chakra-ui.com/docs/components/input/props) for additional props and customization options. |
+
 ### Utility Function: `floatingLabelVariant`
 
 The `floatingLabelVariant` function returns custom styles for a floating label variant within the Chakra UI `Form` component. It takes two parameters:
@@ -155,21 +172,6 @@ const theme = extendTheme(
 <ChakraProvider theme={theme}>/* your app*/</ChakraProvider>
 ```
 
-| Prop                   | Type                                         | Description                                                                                                                                 |
-| ---------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `inputLabel`           | `string`                                     | The label for the input field.                                                                                                              |
-| `isInvalid`            | `boolean`                                    | Indicates whether the input is in an invalid state.                                                                                         |
-| `inputErrorMessage`    | `string`                                     | Error message to be displayed when `isInvalid` is `true`.                                                                                   |
-| `onChange`             | `(e?: FormEvent<HTMLInputElement>) => void`  | Event handler for the input change event.                                                                                                   |
-| `onBlur`               | `(e?: FocusEvent<HTMLInputElement>) => void` | Event handler for the input blur event.                                                                                                     |
-| `inputValue`           | `string`                                     | The current value of the input.                                                                                                             |
-| `inputIdentifier`      | `string`                                     | A unique identifier for the input.                                                                                                          |
-| `isRequired`           | `boolean`                                    | Indicates whether the input is required.                                                                                                    |
-| `hasFloatingLabel`     | `boolean`                                    | Indicates whether the input has a floating label.                                                                                           |
-| `placeholder`          | `string`                                     | Placeholder text for the input.                                                                                                             |
-| `floatingLabelBgColor` | `string`                                     | Background color for the floating label. Default is `'#FFFFFF'`.                                                                            |
-| ...rest                | Various props from Chakra UI's `InputProps`  | Refer to [Chakra UI Input documentation](https://chakra-ui.com/docs/components/input/props) for additional props and customization options. |
-
 ## `PasswordInput`
 
 ### Example Usage
@@ -191,6 +193,8 @@ const MyForm: React.FC = () => {
   );
 };
 ```
+
+## Props
 
 | Prop                | Type                                        | Description                                                                                                                                 |
 | ------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -237,12 +241,12 @@ const YourComponent = () => {
 export default YourComponent;
 ```
 
-## Props
+# Props
 
-The `ScrollTop` component accepts the following props:
-
-- `...rest`: (Optional) Any additional props that can be passed to `IconButton` from `@chakra-ui/react`.
-- `aria-label`: (Automatically handled) ARIA label for accessibility.
+| Prop       | Type                                        | Description                                                                                                                                            |
+| ---------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| aria-label | `string`                                    | ARIA label for accessibility. Automatically handled for the button.                                                                                    |
+| ...rest    | Various props from Chakra UI's `IconButton` | Refer to [Chakra UI IconButton documentation](https://chakra-ui.com/docs/components/icon-button/props) for additional props and customization options. |
 
 ## Behavior
 
@@ -275,13 +279,6 @@ export default ExampleComponent;
 ```
 
 Feel free to customize the `ScrollTop` component by passing additional props to the `IconButton` component.
-
-# ScrollTop Component Props
-
-| Prop       | Type                                        | Description                                                                                                                                            |
-| ---------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| aria-label | `string`                                    | ARIA label for accessibility. Automatically handled for the button.                                                                                    |
-| ...rest    | Various props from Chakra UI's `IconButton` | Refer to [Chakra UI IconButton documentation](https://chakra-ui.com/docs/components/icon-button/props) for additional props and customization options. |
 
 ## Example
 
