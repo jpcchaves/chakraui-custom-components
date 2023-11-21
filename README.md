@@ -329,10 +329,10 @@ const MyComponent = () => {
 
 ```jsx
 import React from 'react';
-import { FloatButton } from 'path-to-float-button';
+import { FloatButton } from 'chakraui-custom-components';
 
 const MyComponent = () => {
-  const handleButtonClick = event => {
+  const handleButtonClick = (event: MouseEvent<HTMLButtonElement>) => {
     // Handle button click event
     console.log('Button Clicked!', event);
   };
