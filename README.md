@@ -207,10 +207,91 @@ const MyForm: React.FC = () => {
 | `variant`           | `string` (optional)                | The Chakra UI variant for the password input.         |
 | `...rest`           | `InputProps` (optional, inherited) | Additional input properties inherited from Chakra UI. |
 
+# `ScrollTop`
+
+The `ScrollTop` component is a React component designed to provide a convenient "scroll to top" button for a web page. When the user scrolls down the page, the button becomes visible, and clicking it smoothly scrolls the page back to the top.
+
+## Usage
+
+Import the `ScrollTop` component into your React application and use it within your desired component or layout.
+
+```tsx
+import { ScrollTop } from './ScrollTop';
+
+// ... your other imports
+
+const YourComponent = () => {
+  // ... your component logic
+
+  return (
+    <div>
+      {/_ Your component content _/}
+      {/_ ... _/}
+
+      {/* ScrollTop component */}
+      <ScrollTop />
+    </div>
+  );
+};
+
+export default YourComponent;
+```
+
+## Props
+
+The `ScrollTop` component accepts the following props:
+
+- `...rest`: (Optional) Any additional props that can be passed to `IconButton` from `@chakra-ui/react`.
+- `aria-label`: (Automatically handled) ARIA label for accessibility.
+
+## Behavior
+
+- The button becomes visible when the user scrolls down the page.
+- Clicking the button smoothly scrolls the page back to the top.
+
+## Example
+
+```tsx
+import { ArrowUpIcon } from '@chakra-ui/icons';
+import { ScrollTop } from './ScrollTop';
+
+const ExampleComponent = () => {
+  return (
+    <div>
+      {/_ Your component content _/}
+      {/_ ... _/}
+
+      {/* ScrollTop component with custom props */}
+      <ScrollTop
+        colorScheme="teal"
+        size="lg"
+        // ... other IconButton props
+      />
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+Feel free to customize the `ScrollTop` component by passing additional props to the `IconButton` component.
+
+# ScrollTop Component Props
+
+| Prop       | Type                                        | Description                                                         |
+| ---------- | ------------------------------------------- | ------------------------------------------------------------------- |
+| ...rest    | `IconButtonProps` (from `@chakra-ui/react`) | Additional props that can be passed to `IconButton`.                |
+| aria-label | `string`                                    | ARIA label for accessibility. Automatically handled for the button. |
+
+## Example
+
+```tsx
+<ScrollTop
+  ...rest
+  aria-label="Your ARIA label"
+/>
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
-
-```
