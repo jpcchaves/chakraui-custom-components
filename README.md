@@ -216,7 +216,7 @@ The `ScrollTop` component is a React component designed to provide a convenient 
 Import the `ScrollTop` component into your React application and use it within your desired component or layout.
 
 ```tsx
-import { ScrollTop } from './ScrollTop';
+import { ScrollTop } from 'chakraui-custom-components';
 
 // ... your other imports
 
@@ -253,7 +253,7 @@ The `ScrollTop` component accepts the following props:
 
 ```tsx
 import { ArrowUpIcon } from '@chakra-ui/icons';
-import { ScrollTop } from './ScrollTop';
+import { ScrollTop } from 'chakraui-custom-components';
 
 const ExampleComponent = () => {
   return (
@@ -278,10 +278,10 @@ Feel free to customize the `ScrollTop` component by passing additional props to 
 
 # ScrollTop Component Props
 
-| Prop       | Type                                        | Description                                                         |
-| ---------- | ------------------------------------------- | ------------------------------------------------------------------- |
-| ...rest    | `IconButtonProps` (from `@chakra-ui/react`) | Additional props that can be passed to `IconButton`.                |
-| aria-label | `string`                                    | ARIA label for accessibility. Automatically handled for the button. |
+| Prop       | Type                                        | Description                                                                                                                                            |
+| ---------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| aria-label | `string`                                    | ARIA label for accessibility. Automatically handled for the button.                                                                                    |
+| ...rest    | Various props from Chakra UI's `IconButton` | Refer to [Chakra UI IconButton documentation](https://chakra-ui.com/docs/components/icon-button/props) for additional props and customization options. |
 
 ## Example
 
@@ -294,16 +294,70 @@ Feel free to customize the `ScrollTop` component by passing additional props to 
 
 ## `FloatButton`
 
-A customizable floating button component based on Chakra UI's IconButton.
+The `FloatButton` component is a customized button component built to create a floating button that can be positioned on the screen.
 
-### Example
+## Usage
+
+Import the `FloatButton` component and use it within your React application.
 
 ```jsx
-// Basic usage:
-<FloatButton onClick={(event) => handleButtonClick(event)} icon={<Icon />} />
+import React from 'react';
+import { FloatButton } from 'chakraui-custom-components';
 
+const MyComponent = () => {
+  const handleButtonClick = (event: MouseEvent<HTMLButtonElement>) => {
+    // Handle button click event
+    console.log('Button Clicked!', event);
+  };
+
+  return (
+    <div>
+      {/_ Other components _/}
+
+      {/_ Use FloatButton component _/}
+      <FloatButton onClick={handleButtonClick} />
+    </div>
+  );
+};
+```
+
+## Props
+
+| Name      | Type                                             | Description                                                                                                                                            |
+| --------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `onClick` | `(event: MouseEvent<HTMLButtonElement>) => void` | Callback function triggered when the button is clicked.                                                                                                |
+| ...rest   | Various props from Chakra UI's `IconButton`      | Refer to [Chakra UI IconButton documentation](https://chakra-ui.com/docs/components/icon-button/props) for additional props and customization options. |
+
+## Example
+
+```jsx
+import React from 'react';
+import { FloatButton } from 'path-to-float-button';
+
+const MyComponent = () => {
+  const handleButtonClick = event => {
+    // Handle button click event
+    console.log('Button Clicked!', event);
+  };
+
+  return (
+    <div>
+      {/_ Other components _/}
+
+      {/_ Use FloatButton component _/}
+      <FloatButton
+        onClick={handleButtonClick}
+        icon={<YourIconComponent />}
+        colorScheme="teal"
+        // Add other Chakra UI IconButton props as needed
+      />
+    </div>
+  );
+};
+```
+
+This example showcases how to use the `FloatButton` component with additional customization using Chakra UI's `IconButton` props.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
