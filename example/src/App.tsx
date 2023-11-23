@@ -1,5 +1,5 @@
 import { AddIcon } from '@chakra-ui/icons';
-import { Box, Flex, Heading, SimpleGrid } from '@chakra-ui/react';
+import { Box, Flex, Heading, SimpleGrid, useColorMode } from '@chakra-ui/react';
 import {
   FloatButton,
   InputComponent,
@@ -8,8 +8,11 @@ import {
 } from 'chakraui-custom-components';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { ThemeToggle } from '../../src/components/themeToggle/index';
 
 const App = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   const { values, errors, touched, handleBlur, handleChange } = useFormik({
     enableReinitialize: true,
     initialValues: {
@@ -71,6 +74,16 @@ const App = () => {
           size={'md'}
           colorScheme="blue"
           onClick={e => console.log(e)}
+        />
+
+        <ThemeToggle
+          currentTheme={colorMode}
+          toggleColorMode={toggleColorMode}
+          moonIconProps={{ color: 'blue.300' }}
+          sunIconProps={{ color: 'orange.300' }}
+          position={'fixed'}
+          right={'12'}
+          bottom={'24'}
         />
       </SimpleGrid>
     </Box>
