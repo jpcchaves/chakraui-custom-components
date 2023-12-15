@@ -6,6 +6,7 @@ import {
 
 import { FloatButton } from './components/floatButton';
 import { ScrollTop } from './components/scrollTop';
+import { ThemeToggle } from './components/themeToggle';
 
 export {
   InputComponent,
@@ -13,4 +14,5 @@ export {
   floatingLabelVariant,
   FloatButton,
   ScrollTop,
+  ThemeToggle,
 };
