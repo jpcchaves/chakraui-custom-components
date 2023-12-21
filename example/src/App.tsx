@@ -5,6 +5,7 @@ import {
   InputComponent,
   PasswordInput,
   ScrollTop,
+  TextareaInput,
 } from 'chakraui-custom-components';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -18,10 +19,12 @@ const App = () => {
     initialValues: {
       test1: '',
       test2: '',
+      test3: '',
     },
     validationSchema: Yup.object().shape({
       test1: Yup.string().required(),
       test2: Yup.string().required(),
+      test3: Yup.string().required(),
     }),
     onSubmit: (values, formikHelpers) => {
       console.log(values, formikHelpers);
@@ -63,6 +66,21 @@ const App = () => {
             onBlur={handleBlur}
             onChange={handleChange}
             inputValue={values.test2}
+          />
+        </Flex>
+
+        <Flex flexDir={'column'} gap={4}>
+          <Heading fontSize={'larger'}>Textarea</Heading>
+
+          <TextareaInput
+            inputErrorMessage={errors.test3}
+            inputIdentifier="test3"
+            inputLabel="Teste 3"
+            isInvalid={!!(errors.test3 && touched.test3)}
+            isRequired
+            onBlur={handleBlur}
+            onChange={handleChange}
+            inputValue={values.test3}
           />
         </Flex>
 

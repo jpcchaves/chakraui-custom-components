@@ -1,6 +1,7 @@
 import {
   InputComponent,
   PasswordInput,
+  TextareaInput,
   floatingLabelVariant,
 } from './components/inputs';
 
@@ -9,10 +10,11 @@ import { ScrollTop } from './components/scrollTop';
 import { ThemeToggle } from './components/themeToggle';
 
 export {
+  FloatButton,
   InputComponent,
   PasswordInput,
-  floatingLabelVariant,
-  FloatButton,
   ScrollTop,
+  TextareaInput,
   ThemeToggle,
+  floatingLabelVariant,
 };
